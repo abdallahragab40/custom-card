@@ -1,0 +1,19 @@
+<div *ngIf="this.parsedLinks.length > 0">
+  <div class="parent" *ngFor="let item of this.parsedLinks">
+    <div></div>
+    <span class="opportunity-link" (click)="item.link()">
+      <i class="bhi-circle opportunity"></i>
+      {{ item.id }} {{ item.name }}
+    </span>
+    <p class="opportunity-detail">
+      <span><i class="bhi-user ng-star-inserted"></i> {{ item.owner }}</span>
+      <span><i class="bhi-info ng-star-inserted"></i> {{ item.status }}</span>
+      <span><i class="bhi-calendar ng-star-inserted"></i> {{ item.expectedCloseDate }}</span>
+      <span></span>
+    </p>
+  </div>
+</div>
+<div class="empty-opportunity" *ngIf="this.parsedLinks.length == 0">
+  <i class="bhi-opportunity"></i>
+  <p>This Company doesn't have any Closed Opportunities.</p>
+</div>
